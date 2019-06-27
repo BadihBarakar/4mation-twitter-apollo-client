@@ -12,9 +12,8 @@ const config = {
 
 const client = new Twitter(config);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.use('/use', function(req, res, next) {
+  res.render('index', { title: 'Use Route' });
 });
 
 router.get('/search/tweets/:keyword', cors(), function(req, res, next) {
